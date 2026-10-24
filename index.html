@@ -1,165 +1,547 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> GUJRATI TRADER - Learning Community</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elite remote network for freelance physical handwriting assignments, notebook copying, journal entries, and handwritten document projects.">
+    <title>ScriptCraft Hub | Premium Physical Handwriting Assignments</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#07090e',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            accent: '#38bdf8',
+                            emerald: '#10b981',
+                            indigo: '#6366f1',
+                            tg: '#229ed9',
+                            tghover: '#1c88bc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Ultra-Premium Dark Glassmorphism Styling */
+        body {
+            background-color: #07090e;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-  .card {
-    width: 85%;
-    max-width: 340px; 
-    background: #010a0f;
-    border: 1.5px solid #00d2ff;
-    border-radius: 35px;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
-  }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-  .profile-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid #00d2ff;
-    object-fit: cover;
-    margin-top: -5px;
-    box-shadow: 0 0 15px #00d2ff;
-  }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.15);
+        }
 
-  h1 {
-    color: #fff;
-    font-size: 20px;
-    margin: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+        /* Glowing Pulse Effect for the Single Telegram CTA */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 25px -5px rgba(34, 158, 217, 0.4); }
+            50% { box-shadow: 0 0 45px 5px rgba(34, 158, 217, 0.75); }
+        }
 
-  .features {
-    text-align: left;
-    margin: 0 auto;
-    width: 90%;
-  }
+        .animate-tg-glow {
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
 
-  .feature-item {
-    color: #ccc;
-    font-size: 13px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-  }
-
-  .feature-item:last-child { border-bottom: none; }
-
-  .icon { margin-right: 12px; font-size: 16px; }
-
-  .join-text {
-    color: #eee;
-    font-size: 12px;
-    margin: 20px 0 12px;
-    font-weight: 300;
-  }
-
-  .telegram-btn {
-    display: block;
-    background: linear-gradient(90deg, #00d2ff 0%, #9247ff 100%);
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
-  }
-
-  .hindi-quote {
-    color: #bbb;
-    font-size: 13px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-
-  .footer-box {
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 12px;
-    padding: 8px;
-    font-size: 11px;
-    color: #888;
-  }
-
-  /* Link styling for Agency */
-  .footer-box a { 
-    color: #00d2ff; 
-    font-weight: bold; 
-    text-decoration: none;
-  }
-
-  .disclaimer {
-    font-size: 9px;
-    color: #444;
-    margin-top: 12px;
-  }
-</style>
+        /* Subtle Gradient Text Effects */
+        .text-gradient-accent {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen antialiased selection:bg-cyan-500/20 selection:text-cyan-300 relative overflow-x-hidden">
 
-<div class="card">
-  <img src="https://i.ibb.co/GQYGXHF4/In-Shot-20260927-223648191.jpg" alt=" GUJRATI TRADER" class="profile-img">
+    <!-- Background Ambient Spotlights -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-tr from-cyan-600/10 via-indigo-600/10 to-emerald-500/5 blur-[120px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-cyan-900/10 blur-[150px] pointer-events-none -z-10"></div>
 
-  <h1> GUJRATI TRADER</h1>
+    <!-- Live Status Bar -->
+    <div class="bg-slate-900/90 border-b border-slate-800 text-xs py-2.5 px-4 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-slate-300 font-semibold tracking-wide uppercase text-[10px] sm:text-xs">
+                    Live Portal Status: <span class="text-emerald-400 font-medium">Physical Handwriting Projects Open</span>
+                </span>
+            </div>
+            <div class="hidden md:flex items-center gap-4 text-slate-400 text-[11px]">
+                <span><i class="fa-solid fa-pen-nib text-cyan-400 mr-1"></i> Pen & Paper Assignments</span>
+                <span><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Quality Inspected</span>
+            </div>
+        </div>
+    </div>
 
-  <div class="features">
-    <div class="feature-item"><span class="icon"></span> Learning & Educational Sessions</div>
-    <div class="feature-item"><span class="icon"></span> Market Concepts & Awareness</div>
-    <div class="feature-item"><span class="icon"></span> Chart Reading Concepts</div>
-    <div class="feature-item"><span class="icon"></span> Educational Case Discussions</div>
-  </div>
+    <!-- Header Navigation (Displays User Logo, NO Extra CTA Buttons) -->
+    <header class="py-5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex items-center justify-between relative z-30">
+        <div class="flex items-center space-x-3">
+            <div class="w-11 h-11 rounded-xl bg-slate-800 p-0.5 border border-slate-700/80 shadow-lg shadow-cyan-500/10 overflow-hidden flex items-center justify-center shrink-0">
+                <img src="https://iili.io/neZmLuV.jpg" alt="ScriptCraft Logo" class="w-full h-full object-cover rounded-[10px]" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0f172a/38bdf8?text=SC';">
+            </div>
+            <div>
+                <span class="text-lg font-black tracking-tight text-white block leading-none">SCRIPTCRAFT <span class="text-cyan-400 font-light">HUB</span></span>
+                <span class="text-[10px] font-medium text-slate-400 tracking-wider uppercase">Handwriting & Penmanship Network</span>
+            </div>
+        </div>
 
-  <p class="join-text">Join our learning community and grow your knowledge</p>
+        <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-800/80 text-slate-300 border border-slate-700/80">
+                <i class="fa-solid fa-certificate text-amber-400 text-[10px]"></i>
+                Verified Network
+            </span>
+        </div>
+    </header>
 
-  <a href="https://t.me/+mc6hSYTJFoU0MmRl" class="telegram-btn">JOIN TELEGRAM</a>
+    <!-- MAIN HERO SECTION - CONTAINS STRICTLY THE ONLY TELEGRAM CTA BUTTON -->
+    <section class="pt-8 pb-16 sm:pt-12 sm:pb-20 px-4 max-w-5xl mx-auto text-center relative z-20">
+        
+        <!-- Trust Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-medium mb-8 backdrop-blur shadow-inner">
+            <i class="fa-solid fa-pen-clip text-cyan-400"></i>
+            Physical Paper Writing & Assignment Copying
+        </div>
 
-  <p class="hindi-quote">     ,     </p>
+        <!-- Headline -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight sm:leading-none mb-6">
+            <span class="text-white">Physical Handwriting &</span><br class="hidden sm:inline"/>
+            <span class="text-gradient-accent"> Paper Assignment Projects</span>
+        </h1>
 
-  <div class="footer-box">
-    This Channel Advertise By <a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">AD BUILD AGENCY</a>
-  </div>
+        <!-- Subheading -->
+        <p class="text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+            Work remotely by copying academic notebooks, transcribing manuscripts onto ruled paper, writing log entries by hand, and preparing handwritten project documents. Clear output-based rate model.
+        </p>
 
-  <div class="disclaimer">
-    Terms | Privacy | Disclaimer <br>
-    This site is not part of Facebook� or endorsed by Facebook�.
-  </div>
-</div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2552096918611818');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2552096918611818&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+        <!-- Feature Pill Highlights -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto mb-10 text-left">
+            <div class="glass-card p-4 rounded-xl border border-slate-800 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-house-laptop"></i>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-white">100% Home Based</h3>
+                    <p class="text-[10px] text-slate-400">Write comfortably at your desk</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl border border-slate-800 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-signature"></i>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-white">Neat Handwriting</h3>
+                    <p class="text-[10px] text-slate-400">Requires legible paper script</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-4 rounded-xl border border-slate-800 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-white">Per-Page Model</h3>
+                    <p class="text-[10px] text-slate-400">Rate set per accepted page</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE EXACT AND ONLY TELEGRAM BUTTON ON THE PAGE -->
+        <div class="max-w-md mx-auto space-y-3">
+            <a href="https://t.me/+SUbdWw-tXkFhMDg9" target="_blank" rel="noopener" onclick="trackTelegramClick()" class="animate-tg-glow flex items-center justify-center gap-3.5 w-full py-4 px-8 bg-brand-tg hover:bg-brand-tghover text-white font-extrabold text-base sm:text-lg rounded-2xl transition duration-300 transform active:scale-95 shadow-2xl border-b-4 border-cyan-700">
+                <i class="fa-brands fa-telegram text-2xl"></i>
+                <span>Join Official Telegram Channel</span>
+            </a>
+            <p class="text-[11px] text-slate-500 flex items-center justify-center gap-1.5 font-medium">
+                <i class="fa-solid fa-shield-check text-emerald-400"></i> Direct Channel Link • Instant Assignment Notices
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Credibility Stats Bar -->
+    <section class="py-8 px-4 border-y border-slate-800/80 bg-slate-950/50 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-2">
+                <div class="text-2xl sm:text-3xl font-extrabold text-white mb-1">100%</div>
+                <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Pen & Paper</div>
+            </div>
+            <div class="p-2">
+                <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 mb-1">A4 & Ruled</div>
+                <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Standard Formats</div>
+            </div>
+            <div class="p-2">
+                <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mb-1">Zero Deposit</div>
+                <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Free Channel Join</div>
+            </div>
+            <div class="p-2">
+                <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 mb-1">Per Page</div>
+                <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Output-Based Pay</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Step Assignment Workflow -->
+    <section class="py-16 sm:py-20 px-4 max-w-5xl mx-auto relative z-20">
+        <div class="text-center mb-12">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">How It Works</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3">Simple 4-Step Workflow</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-lg mx-auto">Clear process from receiving project guidelines to submitting your handwritten pages.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- Step 1 -->
+            <div class="glass-card glass-card-hover rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-extrabold flex items-center justify-center text-sm mb-4">
+                    01
+                </div>
+                <h3 class="text-base font-bold text-white mb-2">View Open Work</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Check active handwriting assignment notices posted in our official Telegram channel.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="glass-card glass-card-hover rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-extrabold flex items-center justify-center text-sm mb-4">
+                    02
+                </div>
+                <h3 class="text-base font-bold text-white mb-2">Write by Hand</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Transcribe assigned text neatly onto ruled or plain paper using requested blue or black ink.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="glass-card glass-card-hover rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 font-extrabold flex items-center justify-center text-sm mb-4">
+                    03
+                </div>
+                <h3 class="text-base font-bold text-white mb-2">Scan & Upload</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Take well-lit, high-resolution smartphone scans or photos of finished pages.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="glass-card glass-card-hover rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-extrabold flex items-center justify-center text-sm mb-4">
+                    04
+                </div>
+                <h3 class="text-base font-bold text-white mb-2">Quality Review</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Our inspection team verifies script legibility and page counts prior to payout processing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Penmanship & Quality Standards -->
+    <section class="py-16 sm:py-20 px-4 max-w-5xl mx-auto border-t border-slate-800/80">
+        <div class="text-center mb-12">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Handwriting Standards</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3">Mandatory Penmanship Guidelines</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-lg mx-auto">All submitted handwriting sheets must satisfy essential legibility criteria.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Accepted Criteria -->
+            <div class="glass-card p-6 sm:p-8 rounded-2xl border border-emerald-500/20 relative overflow-hidden">
+                <div class="flex items-center gap-3 text-emerald-400 font-bold text-base mb-4 border-b border-slate-800 pb-3">
+                    <i class="fa-solid fa-circle-check text-lg"></i>
+                    <span>Accepted Penmanship Criteria</span>
+                </div>
+                <ul class="space-y-3.5 text-xs sm:text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-emerald-400 mt-1 shrink-0"></i>
+                        <span><strong>Neat & Legible Script:</strong> Uniform spacing between letters, words, and lines (Cursive or Clean Print).</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-emerald-400 mt-1 shrink-0"></i>
+                        <span><strong>Approved Pen Ink:</strong> Dark blue or black gel or ballpoint pens as requested per project.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-emerald-400 mt-1 shrink-0"></i>
+                        <span><strong>Standard Paper Sheets:</strong> Clean A4 sheets, ruled college notebooks, or specified project templates.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-emerald-400 mt-1 shrink-0"></i>
+                        <span><strong>Clear Camera Scans:</strong> Well-lit, uncropped, non-blurry photos or PDF scans of handwritten pages.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Unacceptable Mistakes -->
+            <div class="glass-card p-6 sm:p-8 rounded-2xl border border-rose-500/20 relative overflow-hidden">
+                <div class="flex items-center gap-3 text-rose-400 font-bold text-base mb-4 border-b border-slate-800 pb-3">
+                    <i class="fa-solid fa-circle-xmark text-lg"></i>
+                    <span>Unacceptable Handwriting Errors</span>
+                </div>
+                <ul class="space-y-3.5 text-xs sm:text-sm text-slate-300">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                        <span><strong>Heavy Overwriting:</strong> Excessive white-out fluid, scratched-out words, or visible ink smudges.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                        <span><strong>Illegible Handwriting:</strong> Sloppy script, uneven line alignment, or inconsistent font sizes.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                        <span><strong>Faded Ink / Pencil:</strong> Submissions completed in faint pencil or leaking ink pens.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                        <span><strong>Incomplete Assignments:</strong> Missing pages or skipped paragraphs during paper copying.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Estimation Matrix -->
+    <section class="py-16 sm:py-20 px-4 max-w-4xl mx-auto">
+        <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 relative">
+            <div class="text-center mb-8">
+                <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-amber-500/10 text-amber-400 border border-amber-500/20">Handwriting Volume</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-white mt-2">Assignment Volume Matrix</h2>
+                <p class="text-slate-400 text-xs mt-1">Rates are calculated per approved handwritten page based on document complexity.</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-xs text-slate-400 uppercase tracking-wider">
+                            <th class="py-3 px-4 font-semibold">Volume Tier</th>
+                            <th class="py-3 px-4 font-semibold">Handwriting Category</th>
+                            <th class="py-3 px-4 font-semibold">Rate Structure</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 text-xs sm:text-sm text-slate-300">
+                        <tr>
+                            <td class="py-4 px-4 font-semibold text-white">Small Tier (1–10 Pages)</td>
+                            <td class="py-4 px-4 text-slate-400">Short Study Notes & Letter Copying</td>
+                            <td class="py-4 px-4 font-bold text-emerald-400">Per-Page Standard Rate</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-semibold text-white">Medium Tier (11–25 Pages)</td>
+                            <td class="py-4 px-4 text-slate-400">Student Assignment Notebooks</td>
+                            <td class="py-4 px-4 font-bold text-cyan-400">Per-Page Intermediate Rate</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-semibold text-white">Large Tier (25+ Pages)</td>
+                            <td class="py-4 px-4 text-slate-400">Academic Manuscripts & Journals</td>
+                            <td class="py-4 px-4 font-bold text-indigo-400">Milestone Project Rate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800/80 text-center text-[11px] text-slate-500">
+                * Note: Specific page rates and deadline details are specified in individual assignment notices on our official Telegram channel.
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="py-16 sm:py-20 px-4 max-w-3xl mx-auto border-t border-slate-800/80">
+        <div class="text-center mb-12">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Help & Guidance</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">Frequently Asked Questions</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">Essential answers regarding physical handwriting assignments.</p>
+        </div>
+
+        <div class="space-y-3">
+            <!-- FAQ 1 -->
+            <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                <button onclick="toggleFaq('faq1')" class="w-full p-4 sm:p-5 text-left font-bold text-white text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition">
+                    <span>What handwriting style is expected for projects?</span>
+                    <i id="faq1-icon" class="fa-solid fa-chevron-down text-slate-500 text-xs"></i>
+                </button>
+                <div id="faq1" class="hidden px-4 pb-4 sm:px-5 sm:pb-5 text-xs text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+                    We do not require advanced calligraphy. We require clean, legible, and uniform handwriting in either Cursive or standard Print script. The key is that every word is easy to read and line spacing remains consistent.
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                <button onclick="toggleFaq('faq2')" class="w-full p-4 sm:p-5 text-left font-bold text-white text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition">
+                    <span>Do I need to supply my own paper and pens?</span>
+                    <i id="faq2-icon" class="fa-solid fa-chevron-down text-slate-500 text-xs"></i>
+                </button>
+                <div id="faq2" class="hidden px-4 pb-4 sm:px-5 sm:pb-5 text-xs text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+                    Yes. Assignments require standard ruled notebook paper or clean A4 paper sheets along with standard dark blue or black gel or ballpoint pens available at any stationery store.
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                <button onclick="toggleFaq('faq3')" class="w-full p-4 sm:p-5 text-left font-bold text-white text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition">
+                    <span>How do I submit completed handwritten assignments?</span>
+                    <i id="faq3-icon" class="fa-solid fa-chevron-down text-slate-500 text-xs"></i>
+                </button>
+                <div id="faq3" class="hidden px-4 pb-4 sm:px-5 sm:pb-5 text-xs text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+                    Once you finish writing the assigned pages by hand, you take clear, well-lit photos or PDF scans of the pages using your mobile phone scanner app and upload them for review.
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="glass-card rounded-xl border border-slate-800 overflow-hidden">
+                <button onclick="toggleFaq('faq4')" class="w-full p-4 sm:p-5 text-left font-bold text-white text-xs sm:text-sm flex justify-between items-center hover:bg-slate-800/50 transition">
+                    <span>Is there any registration fee to join the channel?</span>
+                    <i id="faq4-icon" class="fa-solid fa-chevron-down text-slate-500 text-xs"></i>
+                </button>
+                <div id="faq4" class="hidden px-4 pb-4 sm:px-5 sm:pb-5 text-xs text-slate-400 border-t border-slate-800/60 pt-3 leading-relaxed">
+                    No. Joining our official Telegram channel to view open handwriting assignments is 100% free. We never request joining fees or security deposits.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meta Ads Compliant Footer -->
+    <footer class="bg-slate-950 py-12 px-4 border-t border-slate-800 text-slate-500 text-xs relative z-20">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            
+            <!-- Logo in Footer -->
+            <div class="flex justify-center items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-slate-800 p-0.5 border border-slate-700/80 overflow-hidden">
+                    <img src="https://iili.io/neZmLuV.jpg" alt="ScriptCraft Logo" class="w-full h-full object-cover rounded-[5px]" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0f172a/38bdf8?text=SC';">
+                </div>
+                <span class="text-sm font-bold text-slate-300">ScriptCraft Hub</span>
+            </div>
+
+            <!-- Policy Modal Links -->
+            <div class="flex flex-wrap items-center justify-center gap-6 font-semibold text-slate-400 text-xs">
+                <button onclick="openModal('privacy')" class="hover:text-cyan-400 transition underline decoration-slate-700">Privacy Policy</button>
+                <span>•</span>
+                <button onclick="openModal('terms')" class="hover:text-cyan-400 transition underline decoration-slate-700">Terms of Service</button>
+                <span>•</span>
+                <button onclick="openModal('disclaimer')" class="hover:text-cyan-400 transition underline decoration-slate-700">Earnings Disclaimer</button>
+            </div>
+
+            <!-- Mandatory Meta Legal Notice -->
+            <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-800/80 text-[11px] leading-relaxed text-slate-400 max-w-3xl mx-auto space-y-2">
+                <p>
+                    <strong>Meta Advertising Disclaimer:</strong> This website is not affiliated with, associated with, or endorsed by Meta Platforms, Inc. or Facebook. <strong>FACEBOOK</strong> is a registered trademark of <strong>META Platforms, Inc.</strong>
+                </p>
+                <p class="text-slate-500">
+                    <strong>Independent Task Notice:</strong> ScriptCraft Hub operates an informational distribution portal for independent physical handwriting assignments. Compensation is calculated strictly on an output-based per-accepted-page model. Earnings depend on individual handwriting speed, page volume, and legibility verification.
+                </p>
+            </div>
+
+            <p class="text-slate-600 text-[11px]">
+                © 2026 ScriptCraft Hub. All rights reserved. Independent Handwriting Assignments Network.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Policy Modal for Meta Reviewers -->
+    <div id="legalModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-slate-900 text-slate-300 rounded-2xl max-w-lg w-full p-6 relative border border-slate-800 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center text-slate-300 font-bold">
+                ✕
+            </button>
+            <h3 id="modalTitle" class="text-base font-bold text-white mb-3 border-b border-slate-800 pb-2">Legal Information</h3>
+            <div id="modalBody" class="text-xs space-y-3 leading-relaxed text-slate-400">
+                <!-- Content injected dynamically -->
+            </div>
+            <div class="mt-6 pt-3 border-t border-slate-800 text-right">
+                <button onclick="closeModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl transition">Close Policy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Functions -->
+    <script>
+        // FAQ Accordion Toggle Functionality
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                el.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Meta Ads Pixel Event Trigger function
+        function trackTelegramClick() {
+            console.log('Single Hero Telegram Link Clicked: https://t.me/+SUbdWw-tXkFhMDg9');
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Single Telegram Join Click',
+                    content_category: 'Physical Handwriting Assignment'
+                });
+            }
+        }
+
+        // Modal Handler Logic for Meta Reviewers
+        function openModal(type) {
+            const modal = document.getElementById('legalModal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+
+            if (type === 'privacy') {
+                title.innerText = "Privacy Policy";
+                body.innerHTML = `
+                    <p>We respect your privacy. This landing page collects non-identifiable web traffic data purely for ad attribution and conversion tracking purposes.</p>
+                    <p>We do not collect personal financial credentials or sell user data to third parties.</p>
+                `;
+            } else if (type === 'terms') {
+                title.innerText = "Terms of Service";
+                body.innerHTML = `
+                    <p>All project participation operates on an independent freelancer basis. Assignees are expected to follow quality guidelines specified for each task.</p>
+                    <p>Accessing our Telegram channel does not establish an employment contract.</p>
+                `;
+            } else if (type === 'disclaimer') {
+                title.innerText = "Earnings & Output Disclaimer";
+                body.innerHTML = `
+                    <p>Compensation is strictly calculated per accepted handwritten page. No fixed income, guaranteed hourly wage, or passive returns are promised.</p>
+                    <p>Earnings depend entirely on project availability, personal penmanship speed, and compliance with quality standards.</p>
+                `;
+            }
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('legalModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
 </body>
+  
 </html>
